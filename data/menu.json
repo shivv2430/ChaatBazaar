@@ -5,6 +5,8 @@
     "category": "Snacks",
     "price": 30,
     "spice": "Medium",
+    "rating": 4.8,
+    "dietary": ["vegan"],
     "description": "Crispy golden triangle stuffed with spiced potatoes.",
     "image": "img/8.avif"
   },
@@ -14,6 +16,8 @@
     "category": "Chaat",
     "price": 50,
     "spice": "High",
+    "rating": 4.9,
+    "dietary": ["vegan"],
     "description": "Hollow crispy puris filled with spicy, tangy water and chickpeas.",
     "image": "img/2.avif"
   },
@@ -23,6 +27,8 @@
     "category": "Beverages",
     "price": 20,
     "spice": "Low",
+    "rating": 4.7,
+    "dietary": ["gluten-free"],
     "description": "Aromatic tea brewed with spices and milk.",
     "image": "img/7.avif"
   },
@@ -32,6 +38,8 @@
     "category": "Snacks",
     "price": 35,
     "spice": "Medium",
+    "rating": 4.6,
+    "dietary": ["vegan"],
     "description": "Deep-fried pastry filled with spicy lentils.",
     "image": "img/9.avif"
   },
@@ -41,6 +49,8 @@
     "category": "Chaat",
     "price": 45,
     "spice": "High",
+    "rating": 4.8,
+    "dietary": ["vegan", "gluten-free"],
     "description": "Crunchy puffed rice mixed with tangy tamarind chutney.",
     "image": "img/1.avif"
   }
