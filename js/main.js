@@ -92,12 +92,39 @@ function createCard(item, highlightQuery = "") {
     </div>
     <div class="card-footer">
       <span class="price">${formatPrice(item.price)}</span>
-      <button class="add-btn" aria-label="Add ${item.name} to cart">Add</button>
+      <div class="card-footer-actions">
+        <button class="share-btn" aria-label="Share ${item.name}" title="Share via WhatsApp or other apps">
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <button class="add-btn" aria-label="Add ${item.name} to cart">Add</button>
+      </div>
     </div>
+
   `;
 
   const addBtn = card.querySelector(".add-btn");
   addBtn.addEventListener("click", () => addToCart(item.id));
+
+  const shareBtn = card.querySelector(".share-btn");
+  shareBtn.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    const shareData = {
+      title: "ChaatBazaar 🍴",
+      text: `Check out this amazing dish — ${item.name} (${formatPrice(item.price)}) on ChaatBazaar! Authentic Indian street food delivered to your door 🌶️`,
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // User cancelled — do nothing
+      }
+    } else {
+      const waText = encodeURIComponent(shareData.text + " " + shareData.url);
+      window.open(`https://wa.me/?text=${waText}`, "_blank");
+    }
+  });
 
   return card;
 }
